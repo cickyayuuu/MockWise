@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 // import  Image from 'next/image';
-import { dummyInterviews } from "@/constants";
+import { getCurrentUser } from "@/lib/actions/auth.action";
+import {
+  getInterviewsByUserId,
+  getLatestInterviews,
+} from "@/lib/actions/general.action";
 import InterviewCard from "@/components/InterviewCard";
-import { getCurrentUser, getLatestInterviews } from "@/lib/actions/auth.action";
-import { getInterviewsByUserId } from "@/lib/actions/auth.action";
+
 const Home = async () => {
   const user = await getCurrentUser();
 
